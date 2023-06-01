@@ -1,0 +1,62 @@
+What is a headless browser?
+A headless browser is a term used to define browser simulation programs that do not have a GUI.
+These programs execute like any other browser but do not display any UI. In headless browsers,
+when Selenium tests run, they execute in the background. Almost all modern browsers provide the capabilities to run them in a headless mode.
+
+So, is headless testing possible using Selenium? Yes, Selenium supports headless testing.
+In older versions of Selenium, we used the HTMLUnitDriver mainly, a headless driver providing
+a Non-GUI implementation of Selenium WebDriver. But with the latest versions of SeleniumWebDriver
+3 and SeleniumWebDdriver 4, Selenium also supports headless versions of real browsers like Chrome,
+Firefox, and Edge. Selenium provides various configurations using which we can run these browsers
+in a headless mode. Before understanding the details of these configurations, let's first
+understand what benefits does running a test in headless mode provides?
+
+Why use a headless browser for test execution?
+Running a Selenium test case in headless mode provides the following benefits:
+
+Useful in CI pipeline: When we need to execute automated test cases remotely on a server or in any of
+the build and release pipelines for continuous integration servers like Jenkins, it is not always possible
+to install real browsers on such remote machines. We can use headless browsers to run automation tests efficiently.
+Beneficial in web scraping: When you want to write a web scraper or data extractor that needs to visit
+some websites and collect data, headless browsers are a perfect choice. Because we are not concerned
+about functionality in these cases, we visit web pages and get the data.
+Support for multiple browser versions: Sometimes, the tester would like to simulate multiple browser
+versions on the same machine. In that case, you would want to use a headless browser because most of them
+support the simulation of different versions of browsers.
+Faster automation test execution: The performance with a headless browser is better compared to real browser
+automation. The real browsers like Google Chrome, Firefox, and Internet Explorer take a significant amount of
+time to load CSS, JavaScript, Images, and open and render HTML. Headless browsers do not require all this
+ to load and will start performing functions without waiting for a page to load completely. When we need
+  to run the regression scripts, in headless browsers, we could save time as there are much faster and can render results quickly.
+Multi-Tasking: Headless browsers can help you, multi-task.You can use your browser or your machine to do
+anything else while the tests run in the background. Save hours that we otherwise spend staring at the screen.
+Even though running the Selenium test provides these benefits, certain limitations are also attached to
+the same. A few of them are as listed below:
+
+Limitations of headless browser testing
+Debugging will not be feasible, as the only way to check what's running on the browser is to grab the screenshots and validate the output.
+Headless browsers don't mimic the exact user behavior, as the page doesn't render precisely with all the dependencies that it will render in an actual browser.
+Cosmetic bugs like the location of a web element, the color of a web element may get missed while running the tests in headless mode.
+Let's now see how we can run the Selenium test cases in a headless mode:
+
+How to run Selenium test cases in headless mode?
+As we discussed above, Selenium WebDriver provides various drivers and configurations which help in running
+ the Selenium test cases in headless mode. Let's understand a few of them in the following sections:
+
+Running Selenium test cases using HTMLUnitDriver.
+Running Selenium test cases using a headless Chrome browser.
+And, Running Selenium test cases using the headless Firefox browser.
+Running Selenium test cases using a headless Edge browser.
+Running Selenium headless browser tests using HTMLUnitDriver.
+HtmlUnitDriver is an implementation of Selenium WebDriver based on HtmlUnit, which is a Java-based implementation of a
+ web browser without a GUI. HtmlUnitDriver is currently the fastest and most lightweight implementation of WebDriver.
+ HtmlUnitDriver is a well known headless browser driver and has many advantages -
+
+Fastest implementation of WebDriver compared to other browsers.
+HtmlUnitDriver is platform-independent.
+HtmlUnitDriver supports JavaScript.
+Also, HtmlUnitDriver allows you to choose other browser versions to run your scripts. You can mention different
+ browser versions of Chrome or Firefox in the HtmlUnitDriver itself.
+How to use HtmlUnitDriver as a headless browser with Selenium?
+To implement headless testing, Selenium makes use of HtmlUnitDriver, which is another implementation of WebDriver,
+similar to FirefoxDriver, ChromeDriver, etc. HTMLUnitDriver is available as an external dependency and requires you to add the library explicitly.
